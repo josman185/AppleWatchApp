@@ -1,21 +1,286 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--startInterfaceIdentifier-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller identifier="startInterfaceIdentifier" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="josePizzaAppleWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" height="58.5" alignment="left" text="Welcome to Jose's Pizza" textAlignment="center" numberOfLines="2" id="3mR-zc-7mB">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <button width="1" alignment="left" title="Start" id="NVH-Yu-Pz6">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="nPI-cN-Iwl" kind="push" id="BOa-rg-7fv"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="235" y="347"/>
+            <point key="canvasLocation" x="299" y="333"/>
+        </scene>
+        <!--First Step Size-->
+        <scene sceneID="PF3-Wu-UTd">
+            <objects>
+                <controller id="nPI-cN-Iwl" customClass="FirstStepSize" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Size:" textAlignment="center" id="yoh-7D-y3Q">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <picker width="1" height="83" alignment="left" id="O7o-kS-KOP">
+                            <accessibilityTraits key="accessibilityTraits" playsSound="YES" updatesFrequently="YES" adjustable="YES"/>
+                            <connections>
+                                <action selector="pickerActionBtn:" destination="nPI-cN-Iwl" id="rdm-9i-Vak"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="OK" id="aSZ-Dd-fYM">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                            <connections>
+                                <action selector="btnOKtamano" destination="nPI-cN-Iwl" id="Bj1-Ms-nDw"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="sizePickerBtn" destination="O7o-kS-KOP" id="AzG-3f-XEO"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="553" y="333"/>
+        </scene>
+        <!--doughInterfaceCtrl-->
+        <scene sceneID="9Jn-aV-fg2">
+            <objects>
+                <controller identifier="doughInterfaceCtrl" id="3zd-Cb-mne" customClass="DoughInterfaceCtrl" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Dough:" textAlignment="center" id="5dD-GQ-Zij">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <picker width="1" height="86" alignment="left" id="pxs-W1-WLx">
+                            <connections>
+                                <action selector="pickerBtnAction:" destination="3zd-Cb-mne" id="a7w-uQ-85K"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="OK" id="DuQ-Kf-0MA">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                            <connections>
+                                <action selector="btnDoughOK" destination="3zd-Cb-mne" id="TBj-uX-kRa"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="doughPicker" destination="pxs-W1-WLx" id="bLd-Fn-HZp"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="762" y="333"/>
+        </scene>
+        <!--cheeseInterfaceCtrl-->
+        <scene sceneID="oMn-es-nXQ">
+            <objects>
+                <controller identifier="cheeseInterfaceCtrl" id="rQT-Ox-rds" customClass="CheeseInterfaceController" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Cheese:" textAlignment="center" id="egX-Dc-qo8">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <picker width="1" height="86" alignment="left" id="Ren-bb-eyl">
+                            <connections>
+                                <action selector="pickerBtnAction:" destination="rQT-Ox-rds" id="wLQ-xD-O4q"/>
+                            </connections>
+                        </picker>
+                        <button width="1" alignment="left" title="OK" id="HPh-kn-FSu">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                            <connections>
+                                <action selector="btnChesseOK" destination="rQT-Ox-rds" id="7HL-Qu-dOt"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="cheesesPicker" destination="Ren-bb-eyl" id="bdU-Gv-ExL"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="978" y="333"/>
+        </scene>
+        <!--ingredientsInterfaceCtrl-->
+        <scene sceneID="gnC-Pf-O7R">
+            <objects>
+                <controller identifier="ingredientsInterfaceCtrl" id="ST6-7m-Fm7" customClass="IngredientsInterfaceController" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Ingredients:" textAlignment="center" id="w6J-8T-N8E">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <switch width="1" alignment="left" title="Ham" id="fUG-qg-juU">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                            <connections>
+                                <action selector="jamonSwitchBtn:" destination="ST6-7m-Fm7" id="t7Q-g7-4xx"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Peperoni" id="Plq-8h-iGZ">
+                            <connections>
+                                <action selector="peperoniSwitchBtn:" destination="ST6-7m-Fm7" id="Mkf-MP-YOJ"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Turkey" id="lbI-RG-zzl">
+                            <connections>
+                                <action selector="pavoSwitchBtn:" destination="ST6-7m-Fm7" id="qDo-rh-ALR"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Sausage" id="e7c-op-YEb">
+                            <connections>
+                                <action selector="salchichaSwitchBtn:" destination="ST6-7m-Fm7" id="07H-qZ-dv3"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Olive" id="rLj-b5-uw2">
+                            <connections>
+                                <action selector="aceitunaSwitchBtn:" destination="ST6-7m-Fm7" id="Rjo-el-qLw"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Onion" id="T3W-2U-t0N">
+                            <connections>
+                                <action selector="cebollaSwitchBtn:" destination="ST6-7m-Fm7" id="S8V-Hn-kjW"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pepper" id="khw-w3-UQ5">
+                            <connections>
+                                <action selector="pimientoSwitchBtn:" destination="ST6-7m-Fm7" id="fX1-Ho-f8w"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Pineapple" id="jMi-OG-d48">
+                            <connections>
+                                <action selector="pinaSwitchBtn:" destination="ST6-7m-Fm7" id="JgR-mg-owK"/>
+                            </connections>
+                        </switch>
+                        <switch width="1" alignment="left" title="Anchovies" id="o51-gg-S3j">
+                            <connections>
+                                <action selector="anchoasSwitchBtn:" destination="ST6-7m-Fm7" id="ZAG-mT-thu"/>
+                            </connections>
+                        </switch>
+                        <separator alignment="left" id="cLw-Zi-tW6"/>
+                        <button width="1" alignment="left" title="OK" id="f6P-Zq-8ip">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                            <connections>
+                                <action selector="btnOKIngredients" destination="ST6-7m-Fm7" id="hHH-t6-ihV"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1214" y="477.5"/>
+        </scene>
+        <!--validateOrder-->
+        <scene sceneID="aET-fK-50X">
+            <objects>
+                <controller identifier="validateOrder" id="VjV-tN-FP9" customClass="ValidateOrderIC" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="26.5" alignment="left" text="Validate:" textAlignment="center" id="ut1-17-bzx">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <group width="1" alignment="left" id="RSY-aa-0VC">
+                            <items>
+                                <label width="64.5" alignment="left" text="Size:" textAlignment="left" id="jx1-Gr-aid">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="66.5" alignment="right" text="Label" textAlignment="right" id="Bpv-3F-9Ye">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="d0l-qG-OGL">
+                            <items>
+                                <label width="64.5" alignment="left" text="Dough:" textAlignment="left" id="eNJ-fh-Iqg">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="66.5" alignment="right" text="Label" textAlignment="right" id="Mms-h0-DJb">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="a2u-lj-mr8">
+                            <items>
+                                <label width="65" alignment="left" text="Cheese:" textAlignment="left" id="MJW-lj-D6U">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="66.5" alignment="right" text="Label" textAlignment="right" id="dYT-uk-Tb4">
+                                    <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                                </label>
+                            </items>
+                        </group>
+                        <label width="1" alignment="left" text="Ingredients:" textAlignment="center" id="W4Y-1U-wDU">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label width="136" height="68" alignment="center" text="Label" textAlignment="center" numberOfLines="5" id="j5g-Gk-xUm">
+                            <fontDescription key="font" style="UICTFontTextStyleSubhead"/>
+                        </label>
+                        <button width="1" alignment="left" title="OK" id="v8R-cy-Jy9">
+                            <connections>
+                                <action selector="btnValidateOrder" destination="VjV-tN-FP9" id="egh-03-78a"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="cheesePizzaLbl" destination="dYT-uk-Tb4" id="ag6-mB-FI5"/>
+                        <outlet property="doughPizzaLbl" destination="Mms-h0-DJb" id="wvA-P0-jhk"/>
+                        <outlet property="ingredientsPizzaLbl" destination="j5g-Gk-xUm" id="MfC-eh-wpy"/>
+                        <outlet property="sizePizzaLbl" destination="Bpv-3F-9Ye" id="JI9-gi-YRy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1429" y="374.5"/>
+        </scene>
+        <!--pizzaOKIdentifier-->
+        <scene sceneID="FDn-v5-eBg">
+            <objects>
+                <controller identifier="pizzaOKIdentifier" id="tvd-wp-zHG" customClass="PizzaOKInterfaceCtrl" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" alignment="left" text="Enjoy your Pizza!" textAlignment="center" id="4Pg-3s-hbi">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <imageView width="1" alignment="left" image="Image" id="avW-hX-5Nt"/>
+                        <button width="1" alignment="left" title="OK" id="vtV-2i-rTd">
+                            <connections>
+                                <action selector="pizzaOkBtn" destination="tvd-wp-zHG" id="qBY-gl-jJ8"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="imagePizza" destination="avW-hX-5Nt" id="js2-d0-6pM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1678" y="472.5"/>
+        </scene>
+        <!--warningMessageIdentyfier-->
+        <scene sceneID="1AD-FY-mLQ">
+            <objects>
+                <controller identifier="warningMessageIdentyfier" id="xEu-t9-wEp" customClass="WarningMessageIC" customModule="josePizzaAppleWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="124.5" alignment="left" text="Label" textAlignment="justified" numberOfLines="5" id="PZd-P4-5IF">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="messageLbl" destination="PZd-P4-5IF" id="KfC-Ef-WXC"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1678" y="172"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="BOz-TT-tkC">
             <objects>
-                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModuleProvider="target">
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController" customModule="josePizzaAppleWatch_WatchKit_App" customModuleProvider="target">
                     <items>
                         <group alignment="left" id="t8f-Gd-c4y"/>
                         <group alignment="left" id="uCw-4Q-Ouw"/>
@@ -44,7 +309,7 @@
         <!--Notification Controller-->
         <scene sceneID="KIl-fV-djm">
             <objects>
-                <controller id="gdX-wl-uQE" customClass="NotificationController" customModuleProvider="target"/>
+                <controller id="gdX-wl-uQE" customClass="NotificationController" customModule="josePizzaAppleWatch_WatchKit_App" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="553" y="1001"/>
         </scene>

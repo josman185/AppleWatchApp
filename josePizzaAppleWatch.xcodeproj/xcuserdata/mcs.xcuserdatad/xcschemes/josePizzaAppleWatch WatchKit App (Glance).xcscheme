@@ -56,6 +56,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "04A28B381D41748D00B805BC"
+               BuildableName = "josePizzaAppleWatchUITests.xctest"
+               BlueprintName = "josePizzaAppleWatchUITests"
+               ReferencedContainer = "container:josePizzaAppleWatch.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
