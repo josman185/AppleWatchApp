@@ -2,7 +2,7 @@
 //  ValidateOrderIC.swift
 //  josePizzaAppleWatch
 //
-//  Created by MCS on 7/20/16.
+//  Created by jose on 7/20/16.
 //  Copyright © 2016 myCompany. All rights reserved.
 //
 
